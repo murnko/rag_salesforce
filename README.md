@@ -2,15 +2,16 @@
 
 This is a Retrieval-Augmented Generation (RAG) application built to parse, embed, and query Salesforce earnings call transcripts using LangChain, FAISS, and Chainlit.
 
----
+## Project Structure
 
-Project structure:
-src/
-├── config/         # Configuration files and environment variables
-├── data_ingestion/ # Data loading and vectorization modules
-├── retrieval/      # Retriever implementation and graph processing
-├── scripts/        # Vectorization and utility pipelines
-└── application/    # Chainlit web application
+```
+.
+└── src/
+    ├── config/         # Configuration files and environment variables
+    ├── data_ingestion/ # Data loading and vectorization modules
+    ├── retrieval/      # Retriever implementation and graph processing
+    ├── scripts/        # Vectorization and utility pipelines
+    └── application/    # Chainlit web application
 ```
 
 ## Prerequisites
@@ -27,18 +28,10 @@ src/
    OPENAI_API_KEY=
    ```
 
-2. Configure Git (if you haven't already):
-   ```bash
-   git config --global user.name "Your Name"
-   git config --global user.email "your.email@example.com"
-   
-   # Verify your configuration
-   git config --list
-   ```
-
 ## Running with Docker
 
 ### Using Docker (Recommended)
+
 
 1. Make the entrypoint script executable:
    ```bash
@@ -75,10 +68,6 @@ Fix it by either:
    sudo docker build -t rag-app .
    sudo docker run --env-file src/config/secrets.env -p 8000:8000 rag-app
    ```
-
-If you see an error about missing `poetry.lock`:
-1. Make sure you've run `poetry install` first
-2. Verify both `pyproject.toml` and `poetry.lock` exist in your project root
 
 ### Local Development
 
