@@ -1,0 +1,10 @@
+{
+    "data_dir": "data/",
+    "docs_dir": "data/docs",
+    "transcript_zip_url": "https://altimetrik-recruiting-technical-assessment-assets.s3.us-east-1.amazonaws.com/Earnings%20Call%20Transcripts.zip",
+    "embedding_model": "text-embedding-3-small",
+    "vector_store": "FAISS",
+    "retrieval_method": "with_neighbors",
+    "chunk_size": 1000,
+    "chunk_overlap": 200
+}

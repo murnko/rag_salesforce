@@ -1,0 +1,43 @@
+RETRIEVAL & SEARCH
+
+    Try combining vector search with keyword filters (FAISS + basic string match or Azure Cognitive Search filters).
+
+    Add a step during ingestion to classify and tag document types.
+
+    Swap out simple chunking for a semantic splitter – should help get more relevant matches.
+
+    Use an LLM to rephrase or expand queries before retrieval — might improve recall a lot.
+
+    Replace adding neighboring chunks to the retriever with a LLM checking for relevance.
+
+DATA & INDEXING
+
+    Add a local hash tracker to skip reprocessing files that haven’t changed.
+
+    Cache embeddings by content hash to avoid repeat OpenAI calls. (Maybe just a local file cache to start.)
+
+    Look into versioned indexes (esp. in Azure Cognitive Search) so we can audit or roll back changes if needed.
+
+REASONING & TOOLS
+
+    Add LangGraph tools for specific tasks (date parsing, math, summarization). Route based on query type.
+
+    When returning chunks, explain why they were retrieved — keyword match? vector similarity? Add that to metadata and display in separate section in chat.
+
+    Expand graph to use follow up questions to get more context in case of complex queries.
+
+DEPLOYMENT / PIPELINE
+
+    Add LangSmith for tracing – useful for debugging weird LLM behavior.
+
+    Turn ingestion / embedding / answering into AzureML components and chain them into a proper pipeline.
+
+USER FEEDBACK
+
+    Capture thumbs up/down from users via Chainlit’s feedback API. Log it for future fine-tuning.
+
+    Turn on streaming responses (e.g. ChatOpenAI(streaming=True)) — better UX.
+
+SECURITY / ACCESS
+
+    Add doc-level filtering based on metadata (e.g., "only public", or user-specific tags). Apply it during vector search.

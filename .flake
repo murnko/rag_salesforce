@@ -1,0 +1,23 @@
+[flake8]
+max-line-length = 120
+extend-ignore = 
+    E203,  # whitespace before ':', conflicts with black
+    W503,  # line break before binary operator
+exclude = 
+    .git,
+    __pycache__,
+    build,
+    dist,
+    .venv,
+    .env,
+    .mypy_cache,
+    .pytest_cache,
+    .vscode,
+    notebooks,
+    data,
+    scripts/__pycache__,
+    */__init__.py
+max-complexity = 10
+per-file-ignores =
+    tests/*: D101,D102,D103
+    scripts/*: D100

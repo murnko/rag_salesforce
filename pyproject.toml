@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "rag-app"
+version = "0.1.0"
+description = "RAG application using LangChain and Chainlit"
+readme = "README.md"
+authors = ["John Doe <john.doe@example.com>"]
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# Core
+numpy = "2.2.6"
+faiss-cpu = "1.11.0"
+pathvalidate = "3.2.3"
+
+# OpenAI API and tokenization
+openai = "1.82.0"
+tiktoken = "0.9.0"
+
+# LangChain ecosystem
+langchain = "0.3.25"
+langchain-community = "0.3.24"
+langgraph = "0.4.7"
+
+# PDF handling
+PyMuPDF = "1.26.0"
+pymupdf4llm = "0.0.24"
+pypandoc = "1.15"
+
+# App interface
+chainlit = "2.5.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
